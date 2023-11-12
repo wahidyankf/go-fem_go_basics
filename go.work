@@ -3,4 +3,5 @@ go 1.21.4
 use (
 	.
 	./l01basics
+	./l02calculator
 )

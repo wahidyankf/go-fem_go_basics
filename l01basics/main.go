@@ -73,6 +73,52 @@ func main() {
 
 	fmt.Println("-----")
 
+	user := 10
+
+	if user != 1 {
+	} else {
+		fmt.Println("message")
+	}
+
+	if message := "hello"; user != 1 {
+		fmt.Println("message", message)
+	} else {
+		fmt.Println("message", message)
+	}
+
+	switch user {
+	case 1:
+		fmt.Println("user is 1")
+	case 2:
+		fmt.Println("user is 2")
+	default:
+		fmt.Println("user is not 1 or 2")
+	}
+
+	fmt.Println("-----")
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	for index := range message {
+		fmt.Println("index", index)
+	}
+
+	for index, letter := range message {
+		fmt.Println("index", index, "letter", letter)
+	}
+
+	// for len(message) > 10 {
+	// fmt.Println("message", message)
+	// message = message + "!"
+	// }
+
+	// 	for {
+	// // infinite loop
+	// 	}
+
+	fmt.Println("-----")
+
 	panicking()
 }
 
