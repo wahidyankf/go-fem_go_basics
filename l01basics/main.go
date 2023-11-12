@@ -37,8 +37,50 @@ func main() {
 
 	stateTax, _ := calculateTax(100)
 	fmt.Println(stateTax)
+
+	sTax, cTax := calculateTaxWithName(100)
+	fmt.Println(sTax, cTax)
+
+	fmt.Println("-----")
+
+	age := 22
+	birthday(age)
+	birthday(age)
+	// 22
+	fmt.Println(age)
+
+	birthday2(&age)
+	// 23
+	fmt.Println(age)
+
+	// The pointer is 0xc0000b4008 and the value is 23
+	birthday3(&age)
+
+	// 24
+	fmt.Println(age)
+}
+
+func birthday3(pointerAge *int) {
+	fmt.Printf("The pointer is %v and the value is %v\n", pointerAge, *pointerAge)
+
+	*pointerAge++
+}
+
+func birthday2(age *int) {
+	*age++
+}
+
+func birthday(age int) {
+	_ = age + 1
 }
 
 func calculateTax(price float32) (float32, float32) {
 	return price * 0.09, price * 0.02
+}
+
+func calculateTaxWithName(price float32) (stateTax float32, cityTax float32) {
+	stateTax = price * 0.09
+	cityTax = price * 0.02
+
+	return
 }
