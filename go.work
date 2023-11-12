@@ -4,4 +4,5 @@ use (
 	.
 	./l01basics
 	./l02calculator
+	./l03files
 )
