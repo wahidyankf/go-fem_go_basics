@@ -19,6 +19,18 @@ func init() {
 }
 
 func main() {
+
+	// defer is LIFO
+	// it will also executed when panic
+	defer fmt.Println("Bye!!")
+	defer fmt.Println("Good")
+
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered in f", r)
+		}
+	}()
+
 	// function-scoped variables
 	message := "Hello from Go"
 	price := 34.4
@@ -58,6 +70,14 @@ func main() {
 
 	// 24
 	fmt.Println(age)
+
+	fmt.Println("-----")
+
+	panicking()
+}
+
+func panicking() {
+	panic("Something bad happened")
 }
 
 func birthday3(pointerAge *int) {
